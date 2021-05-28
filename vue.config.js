@@ -2,7 +2,7 @@ module.exports = {
   pages: {
     index: {
       entry: 'src/main.js',
-      title: 'Vueで自作ブログ'
+      title: 'Vue製Wiki'
     }
   },
   publicPath: '/',
