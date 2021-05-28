@@ -45,7 +45,7 @@
     <v-app-bar app dark>
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="pl-2">
-        <router-link to="/" class="site-title">Vueで自作ブログ</router-link>
+        <router-link to="/" class="site-title">Vue製Wiki</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
@@ -58,7 +58,7 @@
 
     <v-footer app dark>
       <v-spacer></v-spacer>
-      <small>© 2020-2021 Vueで自作ブログ All rights reserved.</small>
+      <small>© 2021 Vue製Wiki All rights reserved.</small>
     </v-footer>
   </v-app>
 </template>
