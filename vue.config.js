@@ -1,11 +1,11 @@
 module.exports = {
+  publicPath: './',
   pages: {
     index: {
       entry: 'src/main.js',
       title: 'Vue製Wiki'
     }
   },
-  publicPath: '/',
   chainWebpack: (config) => {
     config.module
       .rule('text')
