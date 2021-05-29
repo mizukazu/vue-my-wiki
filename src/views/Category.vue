@@ -2,7 +2,7 @@
   <v-app>
     <v-container>
       <v-row>
-        <v-col v-bind:cols="col" sm="6" lg="4" v-for="(post, index) in postData" :key="index">
+        <v-col v-bind:cols="col" sm="6" lg="4" v-for="post in postData" :key="post.title">
           <router-link :to="{ name:'post', params:{ name: post.title }}" class="card-link">
             <v-card class="mx-auto" max-width="400">
             <v-img class="white--text align-end" height="200px" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
@@ -32,13 +32,28 @@ export default {
   data () {
     return {
       col: '12',
-      postData: postData
+      postData: []
+    }
+  },
+  watch: {
+    $route (to, from) {
+      this.postData = []
+      const test = postData.filter(x => {
+        return this.$route.params.category === 'js' ? x.category === 'JavaScript' : x.category === this.$route.params.category.toUpperCase()
+      })
+      console.log(test)
+      test.forEach(post => {
+        this.postData.push(post)
+      })
     }
   },
   created () {
-    this.postData = postData.filter(x => {
-      if (this.$route.params.category === 'js') return x.category === 'JavaScript'
-      return x.category === this.$route.params.category.toUpperCase()
+    const test = postData.filter(x => {
+      return this.$route.params.category === 'js' ? x.category === 'JavaScript' : x.category === this.$route.params.category.toUpperCase()
+    })
+    console.log(test)
+    test.forEach(post => {
+      this.postData.push(post)
     })
   }
 }
