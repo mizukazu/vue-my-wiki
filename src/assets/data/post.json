@@ -1,37 +1,18 @@
 [
 	{
-		"date": "2021/02/08",
-		"title": "テスト記事",
-		"content": "<p>2021/02/08</p>\n<p>JavaScript</p>\n<h1 id=\"テスト記事\">テスト記事</h1>\n<p>Vueで自作ブログを作りました。</p>\n",
-		"category": "JavaScript",
-		"fileName": "Vueで自作ブログ.md"
+		"content": "",
+		"fullPath": "src/assets/data/post/html"
 	},
 	{
-		"date": "2020/08/25",
-		"title": "Vueで自作ブログを作成",
-		"content": "<p>2020/08/25</p>\n<p>JavaScript</p>\n<h1 id=\"vueで自作ブログを作成\">Vueで自作ブログを作成</h1>\n<p>Vueで自作ブログを作成しました。</p>\n",
-		"category": "JavaScript",
-		"fileName": "Vueで自作ブログを作成.md"
+		"content": "<p>2021/06/09</p>\n<p>HTML</p>\n<h1 id=\"htmlに関するページ\">HTMLに関するページ</h1>\n<p>これはHTMLに関する記事です。</p>\n",
+		"fullPath": "src/assets/data/post/html/htmltest.md"
 	},
 	{
-		"date": "2020/07/08",
-		"title": "テスト記事",
-		"content": "<p>2020/07/08</p>\n<p>HTML</p>\n<h1 id=\"テスト記事\">テスト記事</h1>\n<p>これはテスト記事です。</p>\n",
-		"category": "HTML",
-		"fileName": "これはテスト記事.md"
+		"content": "",
+		"fullPath": "src/assets/data/post/js"
 	},
 	{
-		"date": "2019/05/23",
-		"title": "テスト記事",
-		"content": "<p>2019/05/23</p>\n<p>PHP</p>\n<h1 id=\"テスト記事\">テスト記事</h1>\n<p>これはテスト記事です。</p>\n",
-		"category": "PHP",
-		"fileName": "サンプル記事.md"
-	},
-	{
-		"date": "2020/08/08",
-		"title": "テスト記事",
-		"content": "<p>2020/08/08</p>\n<p>CSS</p>\n<h1 id=\"テスト記事\">テスト記事</h1>\n<p>これはテスト記事です。</p>\n",
-		"category": "CSS",
-		"fileName": "テスト記事.md"
+		"content": "<p>2021/06/10</p>\n<p>JS</p>\n<h1 id=\"jsに関するページ\">JSに関するページ</h1>\n<p>これはJSに関する記事です。</p>\n",
+		"fullPath": "src/assets/data/post/js/jstest.md"
 	}
 ]

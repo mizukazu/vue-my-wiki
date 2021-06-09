@@ -1,0 +1,28 @@
+[
+  {
+    "name": "ホーム",
+    "icon": "mdi-vuetify",
+    "link": "/"
+  },
+	{
+    "name": "カテゴリー",
+    "icon": "mdi-alphabetical-variant",
+    "active": true,
+    "childs": [
+      {
+        "name": "HTML",
+        "link": "/html",
+        "posts": [
+          { "title": "htmltest", "link": "/html/htmltest.md" }
+        ]
+      },
+      {
+        "name": "JS",
+        "link": "/js",
+        "posts": [
+          { "title": "jstest", "link": "/js/jstest.md" }
+        ]
+      }
+    ]
+  }
+]
