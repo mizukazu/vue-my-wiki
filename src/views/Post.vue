@@ -8,7 +8,7 @@
 
 <script>
 import marked from 'marked'
-import postData from '../assets/data/post.json'
+import postData from '@/assets/data/post.json'
 
 export default {
   name: 'post',
@@ -21,9 +21,10 @@ export default {
     }
   },
   created () {
-    this.postContent = postData.find(x => x.title === this.$route.params.name).content
-    // const test = postData.find(x => x.title === this.$route.params.name).content
-    // console.log(test)
+    console.log(this.$route.params)
+    const postPath = `post/${this.$route.params.category}/${this.$route.params.name}`
+    const data = postData.find(post => post.fullPath.includes(postPath))
+    this.postContent = data.content
   },
   methods: {
     convertMd () {
