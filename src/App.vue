@@ -3,37 +3,45 @@
     <!-- Navigation -->
     <v-navigation-drawer app v-model="drawer">
       <v-container>
-        <!-- <v-list-item-title class="title grey--text text--darken-2 center">サイト項目</v-list-item-title> -->
-        <v-divider></v-divider>
-
-        <v-list-item-title class="title grey--text text--darken-2 center">サイト項目</v-list-item-title>
-        <v-divider></v-divider>
 
         <v-list dense nav>
-          <template v-for="list in navLists">
-            <v-list-item v-if="!list.lists" :to="list.link" :key="list.name">
+          <template v-for="list in navLists2">
+            <!-- 子のナビが無い時 -->
+            <v-list-item v-if="!list.childs" :to="list.link" :key="list.name">
               <v-list-item-icon>
                 <v-icon>{{ list.icon }}</v-icon>
               </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title>{{ list.name }}</v-list-item-title>
-              </v-list-item-content>
+              <v-list-item-title>{{ list.name }}</v-list-item-title>
             </v-list-item>
 
+            <!-- 子のナビがある時 -->
             <v-list-group v-else no-action :prepend-icon="list.icon" :key="list.name" v-model="list.active">
               <template v-slot:activator>
-                <v-list-item-content>
-                  <v-list-item-title>
-                    {{ list.name }}
-                  </v-list-item-title>
-                </v-list-item-content>
+                <v-list-item-title>
+                  {{ list.name }}
+                </v-list-item-title>
               </template>
 
-              <v-list-item v-for="nestList in list.lists" :key="nestList.name" :to="nestList.link">
-                <v-list-item-title>
-                  {{ nestList.name }}
-                </v-list-item-title>
-              </v-list-item>
+              <template v-for="child in list.childs">
+                <v-list-item v-if="!child.posts" :to="child.link" :key="child.name">
+                  <v-list-item-title>{{ child.name }}</v-list-item-title>
+                </v-list-item>
+
+                <v-list-group v-else sub-group :key="child.name">
+                  <template v-slot:activator>
+                    <v-list-item-title>
+                      {{ child.name }}
+                    </v-list-item-title>
+                  </template>
+                  <v-list-item v-for="post in child.posts" :key="post.title">
+                    <router-link :to="post.link">
+                      {{ post.title }}
+                    </router-link>
+                  </v-list-item>
+                </v-list-group>
+
+              </template>
+
             </v-list-group>
           </template>
         </v-list>
@@ -65,6 +73,8 @@
 
 <script>
 import 'normalize.css'
+import navigation from '@/config/navigation.json'
+// import dataUrl from '@/assets/data/post'
 // import { VueLoading } from 'vue-loading-template'
 
 export default {
@@ -78,6 +88,7 @@ export default {
       drawer: null,
       loading: true,
       result: [],
+      navLists2: navigation,
       navLists: [
         {
           name: 'ホーム',
@@ -88,27 +99,56 @@ export default {
           name: 'カテゴリー',
           icon: 'mdi-alphabetical-variant',
           active: true,
-          link: '/category',
-          lists: [
-            { name: 'HTML', link: '/category/html' },
-            { name: 'CSS', link: '/category/css' },
-            { name: 'JS', link: '/category/js' },
-            { name: 'php', link: '/category/php' }
-          ]
-        },
-        {
-          name: 'アーカイブ',
-          icon: 'mdi-clock-outline',
-          active: true,
-          link: '/archive',
-          lists: [
-            { name: '2019/05', link: '/archive/201905' },
-            { name: '2020/07', link: '/archive/202007' },
-            { name: '2020/08', link: '/archive/202008' }
+          // link: '/category',
+          childs: [
+            {
+              name: 'HTML',
+              link: '/html',
+              posts: [
+                { title: 'test', link: '/post/test' },
+                { title: 'sample', link: '/post/sample' },
+                { title: 'テスト', link: '/post/hoge' },
+                { title: 'サンプル', link: '/post/fuga' },
+                { title: 'test2', link: '/post/test555' }
+              ]
+              // childs: [
+              //   {
+              //     name: 'HTML2',
+              //     link: '/html2',
+              //     posts: [
+              //       { title: 'test', link: '/post/test' },
+              //       { title: 'sample', link: '/post/test' }
+              //     ]
+              //   }
+              // ]
+            },
+            {
+              name: 'JS',
+              link: '/js',
+              posts: [
+                { title: 'test', link: '/post/test' },
+                { title: 'sample', link: '/post/test' },
+                { title: 'テスト', link: '/post/test' }
+              ]
+            }
           ]
         }
+        // {
+        //   name: 'アーカイブ',
+        //   icon: 'mdi-clock-outline',
+        //   active: true,
+        //   link: '/archive',
+        //   lists: [
+        //     { name: '2019/05', link: '/archive/201905' },
+        //     { name: '2020/07', link: '/archive/202007' },
+        //     { name: '2020/08', link: '/archive/202008' }
+        //   ]
+        // }
       ]
     }
+  },
+  created () {
+    console.log(navigation)
   },
   mounted () {
   }
