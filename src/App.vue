@@ -5,7 +5,7 @@
       <v-container>
 
         <v-list dense nav>
-          <template v-for="list in navLists2">
+          <template v-for="list in navLists">
             <!-- 子のナビが無い時 -->
             <v-list-item v-if="!list.childs" :to="list.link" :key="list.name">
               <v-list-item-icon>
@@ -74,8 +74,6 @@
 <script>
 import 'normalize.css'
 import navigation from '@/config/navigation.json'
-// import dataUrl from '@/assets/data/post'
-// import { VueLoading } from 'vue-loading-template'
 
 export default {
   name: 'App',
@@ -89,52 +87,7 @@ export default {
       drawer: null,
       loading: true,
       result: [],
-      navLists2: navigation,
-      navLists: [
-        {
-          name: 'ホーム',
-          icon: 'mdi-vuetify',
-          link: '/'
-        },
-        {
-          name: 'カテゴリー',
-          icon: 'mdi-alphabetical-variant',
-          active: true,
-          childs: [
-            {
-              name: 'HTML',
-              link: '/html',
-              posts: [
-                { title: 'test', link: '/post/test' },
-                { title: 'sample', link: '/post/sample' },
-                { title: 'テスト', link: '/post/hoge' },
-                { title: 'サンプル', link: '/post/fuga' },
-                { title: 'test2', link: '/post/test555' }
-              ]
-            },
-            {
-              name: 'JS',
-              link: '/js',
-              posts: [
-                { title: 'test', link: '/post/test' },
-                { title: 'sample', link: '/post/test' },
-                { title: 'テスト', link: '/post/test' }
-              ]
-            }
-          ]
-        }
-        // {
-        //   name: 'アーカイブ',
-        //   icon: 'mdi-clock-outline',
-        //   active: true,
-        //   link: '/archive',
-        //   lists: [
-        //     { name: '2019/05', link: '/archive/201905' },
-        //     { name: '2020/07', link: '/archive/202007' },
-        //     { name: '2020/08', link: '/archive/202008' }
-        //   ]
-        // }
-      ]
+      navLists: navigation
     }
   },
   created () {
