@@ -1,32 +1,8 @@
 [
 	{
-		"title": "htmltest",
-		"category": "HTML",
-		"content": "<h1 id=\"htmlについて\">HTMLについて</h1>\n<p>これはHTMLに関する記事です。</p>\n",
-		"fullPath": "src/assets/data/post/html/htmltest.md"
-	},
-	{
-		"title": "HTMLについて",
-		"category": "HTML",
-		"content": "<h1 id=\"htmlについて\">HTMLについて</h1>\n<p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト\nダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト\nダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>\n<p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト\nダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>\n",
-		"fullPath": "src/assets/data/post/html/HTMLについて.md"
-	},
-	{
-		"title": "jstest",
-		"category": "JS",
-		"content": "<p>2021/06/10</p>\n<p>JS</p>\n<h1 id=\"jsに関するページ\">JSに関するページ</h1>\n<p>これはJSに関する記事です。</p>\n",
-		"fullPath": "src/assets/data/post/js/jstest.md"
-	},
-	{
-		"title": "JSについて",
-		"category": "JS",
-		"content": "<h1 id=\"jsについて\">JSについて</h1>\n<p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト\nダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト\nダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>\n<p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト\nダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>\n",
-		"fullPath": "src/assets/data/post/js/JSについて.md"
-	},
-	{
-		"title": "vueについて",
-		"category": "VUE",
-		"content": "<h1 id=\"vueについて\">vueについて</h1>\n<p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト\nダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト\nダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>\n<p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト\nダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>\n",
-		"fullPath": "src/assets/data/post/vue/vueについて.md"
+		"title": "Firebaseメモ",
+		"category": "FIREBASE",
+		"content": "<h1 id=\"firebaseメモ\">Firebaseメモ</h1>\n<p>node.jsからFirebaseの操作をするあれこれを書いていきます。</p>\n<h2 id=\"storage\">Storage</h2>\n<h3 id=\"ファイルの取得\">ファイルの取得</h3>\n<p>ストレージへの参照を作る(基本みんな同じ)</p>\n<p><code>const storage = firebase.storage;</code></p>\n<p><code>const storageRef = storage.ref();</code></p>\n<p>ストレージの参照から取得したいファイルへの参照を作る</p>\n<p>ストレージの下位ツリーにアクセスするにはchildメソッドを使う。</p>\n<p><code>const imageRef = storageRef.child(&#39;images/cat1.jpg&#39;);</code></p>\n<p>画像のURLを取得する。</p>\n<p>非同期処理なのでasync,awaitやthenを使ってURLを取得する。</p>\n<p><code>imageRef.getDownloadURL().then(res =&gt; console.log(res));</code></p>\n<h2 id=\"firestore\">Firestore</h2>\n<h3 id=\"データの取得\">データの取得</h3>\n<p>DBへの参照を作る</p>\n<p><code>const db = firebase.firestore();</code></p>\n<p>コレクションへの参照を作る</p>\n<p><code>const collectionRef = db.collection(&#39;users&#39;);</code></p>\n<p>データを取得する</p>\n<p>非同期処理なのでasync,awaitやthenを使ってデータを取得する。</p>\n<p><code>collectionRef.get().then(res =&gt; console.log(res));</code></p>\n",
+		"fullPath": "src/assets/data/post/firebase/Firebaseメモ.md"
 	}
 ]
