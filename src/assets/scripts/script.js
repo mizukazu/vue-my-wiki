@@ -14,7 +14,6 @@ const fo = require('./modules/fileOperation')
 // console.log(fileList)
 const navigation = JSON.parse(fo.readFile(navigationPath))
 
-
 // 記事データから必要な情報を抽出
 const postJson = []
 const category = []
@@ -35,22 +34,25 @@ glob(`${postDirPath}/**/*`, (err, files) => {
       })
     }
   })
-category.forEach(cat => {
-  navigation[1].childs.forEach(child => {
-    console.log(cat.toUpperCase(), child.name)
-    if(child.name.includes(cat.toUpperCase())) {
-      child.posts = []
-    }
+  category.forEach(cat => {
+    navigation[1].childs.forEach(child => {
+    // console.log(cat.toUpperCase(), child.name)
+      if (child.name.includes(cat.toUpperCase())) {
+        child.posts = []
+      }
+    })
   })
-})
-postJson.forEach(post => {
-  const p = navigation[1].childs.find(category => category.name.localeCompare(post.category))
-  const navPost = {
-    title: post.title,
-    link: `/${post.category.toLowerCase()}/${post.title}`
-  }
-  p.posts.push(navPost)
-})
+  postJson.forEach(post => {
+    const p = navigation[1].childs.find(category => category.name.includes(post.category))
+    console.log(p)
+    // const p = navigation[1].childs.find(category => category.name.localeCompare(post.category))
+    const navPost = {
+      title: post.title,
+      link: `/${post.category.toLowerCase()}/${post.title}`
+    }
+    // console.log(`navpost:${navPost.link}`)
+    p.posts.push(navPost)
+  })
 
   // 記事データのJSONを作成
   fo.writeFile(postPath, JSON.stringify(postJson, null, '\t'))
