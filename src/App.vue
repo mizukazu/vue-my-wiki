@@ -50,8 +50,8 @@
     </v-navigation-drawer>
     <!-- End of Navigation -->
 
-    <v-app-bar app dark>
-      <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
+    <v-app-bar app :color="primaryColor">
+      <v-app-bar-nav-icon @click="drawer=!drawer" color="#fff"></v-app-bar-nav-icon>
       <v-toolbar-title class="pl-2">
         <router-link to="/" class="site-title">Vue製Wiki</router-link>
       </v-toolbar-title>
@@ -64,9 +64,9 @@
       </transition>
     </v-main>
 
-    <v-footer app dark>
+    <v-footer app :color="primaryColor">
       <v-spacer></v-spacer>
-      <small>© 2021 Vue製Wiki All rights reserved.</small>
+      <small class="copyRight">© 2021 Vue製Wiki All rights reserved.</small>
     </v-footer>
   </v-app>
 </template>
@@ -85,6 +85,7 @@ export default {
 
   data () {
     return {
+      primaryColor: '#3B4675',
       drawer: null,
       loading: true,
       result: [],
@@ -99,7 +100,6 @@ export default {
           name: 'カテゴリー',
           icon: 'mdi-alphabetical-variant',
           active: true,
-          // link: '/category',
           childs: [
             {
               name: 'HTML',
@@ -111,16 +111,6 @@ export default {
                 { title: 'サンプル', link: '/post/fuga' },
                 { title: 'test2', link: '/post/test555' }
               ]
-              // childs: [
-              //   {
-              //     name: 'HTML2',
-              //     link: '/html2',
-              //     posts: [
-              //       { title: 'test', link: '/post/test' },
-              //       { title: 'sample', link: '/post/test' }
-              //     ]
-              //   }
-              // ]
             },
             {
               name: 'JS',
@@ -169,5 +159,8 @@ export default {
 }
 .v-enter, .v-leave-to {
   opacity: 0;
+}
+.copyRight {
+  color: #fff;
 }
 </style>
