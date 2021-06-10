@@ -1,28 +1,56 @@
 [
-  {
-    "name": "ホーム",
-    "icon": "mdi-vuetify",
-    "link": "/"
-  },
 	{
-    "name": "カテゴリー",
-    "icon": "mdi-alphabetical-variant",
-    "active": true,
-    "childs": [
-      {
-        "name": "HTML",
-        "link": "/html",
-        "posts": [
-          { "title": "htmltest", "link": "/html/htmltest.md" }
-        ]
-      },
-      {
-        "name": "JS",
-        "link": "/js",
-        "posts": [
-          { "title": "jstest", "link": "/js/jstest.md" }
-        ]
-      }
-    ]
-  }
+		"name": "ホーム",
+		"icon": "mdi-vuetify",
+		"link": "/"
+	},
+	{
+		"name": "カテゴリー",
+		"icon": "mdi-alphabetical-variant",
+		"active": true,
+		"childs": [
+			{
+				"name": "HTML",
+				"link": "/html",
+				"posts": [
+					{
+						"title": "jstest",
+						"link": "/js/jstest"
+					},
+					{
+						"title": "JSについて",
+						"link": "/js/JSについて"
+					},
+					{
+						"title": "vueについて",
+						"link": "/vue/vueについて"
+					}
+				]
+			},
+			{
+				"name": "JS",
+				"link": "/js",
+				"posts": [
+					{
+						"title": "htmltest",
+						"link": "/html/htmltest"
+					},
+					{
+						"title": "HTMLについて",
+						"link": "/html/HTMLについて"
+					}
+				]
+			},
+			{
+				"name": "Vue",
+				"link": "/vue",
+				"posts": [
+					{
+						"title": "vueについて",
+						"link": "/vue/vueについて"
+					}
+				]
+			}
+		]
+	}
 ]
