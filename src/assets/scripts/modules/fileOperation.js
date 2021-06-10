@@ -46,19 +46,3 @@ exports.getFileList = (dir) => {
     console.error(err.message)
   }
 }
-
-// 後で非同期で実装するかも
-// async function readFile(file) {
-//   return new Promise((resolve, reject) => {
-//     fs.readFile(file, {encoding: 'utf8'}, (err, data) => {
-//       if (err) {
-//         reject(err);
-//       }
-//       resolve(data);
-//     });
-//   }
-// )};
-
-exports.test = () => {
-  console.log('test')
-}
