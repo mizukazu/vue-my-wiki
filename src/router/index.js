@@ -23,16 +23,6 @@ const routes = [
     name: 'post',
     component: Post
   }
-  // {
-  //   path: '/archive/:archive',
-  //   name: 'archive',
-  //   component: Archive
-  // },
-  // {
-  //   path: '/post/:name',
-  //   name: 'post',
-  //   component: Post
-  // }
 ]
 
 const router = new VueRouter({
